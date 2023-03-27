@@ -17,7 +17,8 @@ const ProjectMain = () => {
           <CategoryBtn content={el.name} onClickTab={onClickTab} tab={tab} />
         ))}
       </S.BtnContainer>
-      <Slide />
+      <Slide SlideTitle="웹 프로젝트 모아보기" />
+      <Slide SlideTitle="Next js 프로젝트 모아보기" />
     </>
   );
 };

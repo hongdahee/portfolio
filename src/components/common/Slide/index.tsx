@@ -1,8 +1,9 @@
 import * as S from "./style";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { ISlideTitle } from "@/types/slide";
 
-const Slide = () => {
+const Slide = ({ SlideTitle }: ISlideTitle) => {
   const [index, setIndex] = useState(0);
   const [leaving, setLeaving] = useState(false);
   const [onHover, setOnHover] = useState(false);
@@ -30,7 +31,7 @@ const Slide = () => {
 
   return (
     <>
-      <S.Title>웹 프로젝트 모아보기</S.Title>
+      <S.Title>{SlideTitle}</S.Title>
       <S.Slider onMouseOver={hoverSlider} onMouseOut={hoverSlider}>
         <AnimatePresence initial={false} onExitComplete={toggleLeaving}>
           <S.Row
@@ -44,7 +45,11 @@ const Slide = () => {
             {[1, 2, 3, 4, 5, 6]
               .slice(offset * index, offset * index + offset)
               .map((el) => (
-                <S.Project key={el}>{el}</S.Project>
+                <S.Project key={el}>
+                  <S.ProjectDetail>
+                    <S.ProjectTitle>{el}</S.ProjectTitle>
+                  </S.ProjectDetail>
+                </S.Project>
               ))}
             {onHover && (
               <>

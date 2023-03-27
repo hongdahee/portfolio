@@ -13,6 +13,7 @@ export const Slider = styled.div`
   display: flex;
   height: 19.5vw;
   overflow-x: hidden;
+  margin-bottom: 2.5vw;
 `;
 
 export const Row = styled(motion.div)`
@@ -28,6 +29,13 @@ export const Project = styled(motion.div)`
   height: 19.5vw;
   border-radius: 4px;
   background-color: pink;
+  position: relative;
+  &:hover {
+    filter: brightness(0.7);
+    div {
+      display: block;
+    }
+  }
 `;
 
 export const SliderBtn = styled.div`
@@ -47,4 +55,21 @@ export const SliderBtn = styled.div`
   &.left {
     left: 0.3%;
   }
+`;
+
+export const ProjectTitle = styled.h2`
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 700;
+  white-space: pre-wrap;
+  margin-bottom: 20px;
+`;
+
+export const ProjectDetail = styled.div`
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 3;
+  width: 100%;
+  display: none;
 `;
