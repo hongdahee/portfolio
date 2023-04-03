@@ -28,10 +28,17 @@ export const Project = styled(motion.div)`
   width: 100%;
   height: 19.5vw;
   border-radius: 4px;
-  background-color: pink;
+  background-image: url(${(props) => props.color});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   &:hover {
-    filter: brightness(0.7);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(${(props) => props.color});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     div {
       display: block;
     }
@@ -59,10 +66,10 @@ export const SliderBtn = styled.div`
 
 export const ProjectTitle = styled.h2`
   color: rgb(255, 255, 255);
-  font-size: 18px;
+  font-size: 1.8vw;
   font-weight: 700;
   white-space: pre-wrap;
-  margin-bottom: 20px;
+  margin-bottom: 1.5vw;
 `;
 
 export const ProjectDetail = styled.div`
@@ -72,4 +79,16 @@ export const ProjectDetail = styled.div`
   z-index: 3;
   width: 100%;
   display: none;
+  padding-bottom: 4vw;
+  padding-left: 2vw;
+`;
+
+export const ProjectTag = styled.span`
+  height: 20px;
+  border-radius: 3px;
+  font-size: 1vw;
+  background-color: rgb(50, 48, 44);
+  color: rgb(227, 226, 224);
+  margin: 0px 6px 6px 0px;
+  padding: 5px 6px;
 `;

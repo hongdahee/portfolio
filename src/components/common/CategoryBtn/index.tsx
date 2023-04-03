@@ -4,6 +4,7 @@ import * as S from "./style";
 const CategoryBtn = ({ content, onClickTab, tab }: ICategoryProps) => {
   return (
     <S.CategoryBtn
+      key={content}
       onClick={() => onClickTab(content)}
       className={tab === content ? "active" : ""}
     >

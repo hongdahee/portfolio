@@ -4,7 +4,7 @@ import CategoryBtn from "../common/CategoryBtn";
 import Slide from "../common/Slide";
 import * as S from "./style";
 
-const ProjectMain = () => {
+const ProjectMain = ({ data }: any) => {
   const [tab, setTab] = useState("전체");
   const onClickTab = (selectedTab: string) => {
     setTab(selectedTab);
@@ -17,7 +17,7 @@ const ProjectMain = () => {
           <CategoryBtn content={el.name} onClickTab={onClickTab} tab={tab} />
         ))}
       </S.BtnContainer>
-      <Slide SlideTitle="웹 프로젝트 모아보기" />
+      <Slide data={data} SlideTitle="웹 프로젝트 모아보기" />
       <Slide SlideTitle="Next js 프로젝트 모아보기" />
     </>
   );
