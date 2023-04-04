@@ -50,7 +50,15 @@ const Slide = ({ SlideTitle, data }: any) => {
                 .slice(offset * index, offset * index + offset)
                 .map((el: any) => (
                   <Link
-                    href={`/main/project/${el.properties.name.title[0]?.plain_text}`}
+                    href={{
+                      pathname: `/main/project/${el.properties.name.title[0]?.plain_text}`,
+                      query: {
+                        title: el.properties.name.title[0]?.plain_text,
+                        img: el.properties.img.files[0].file.url,
+                        stack: JSON.stringify(el.properties.stack.multi_select),
+                      },
+                    }}
+                    as={`/main/project/${el.properties.name.title[0]?.plain_text}`}
                   >
                     <S.Project
                       color={el.properties.img.files[0].file.url}
