@@ -1,4 +1,4 @@
-import { tabNameList } from "@/constants/category";
+import { TAB_NAME_LIST } from "@/constants/category";
 import { useState } from "react";
 import CategoryBtn from "../common/CategoryBtn";
 import Slide from "../common/Slide";
@@ -13,7 +13,7 @@ const ProjectMain = ({ data }: any) => {
   return (
     <>
       <S.BtnContainer>
-        {tabNameList.map((el) => (
+        {TAB_NAME_LIST.map((el) => (
           <CategoryBtn content={el.name} onClickTab={onClickTab} tab={tab} />
         ))}
       </S.BtnContainer>

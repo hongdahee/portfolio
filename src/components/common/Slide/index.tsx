@@ -68,9 +68,13 @@ const Slide = ({ SlideTitle, data }: any) => {
                         <S.ProjectTitle>
                           {el.properties.name.title[0]?.plain_text}
                         </S.ProjectTitle>
-                        {el.properties.stack.multi_select.map((el: any) => (
-                          <S.ProjectTag>{el.name}</S.ProjectTag>
-                        ))}
+                        <S.TagContainer>
+                          {el.properties.stack.multi_select
+                            .slice(0, 3)
+                            .map((el: any) => (
+                              <S.ProjectTag>{el.name}</S.ProjectTag>
+                            ))}
+                        </S.TagContainer>
                       </S.ProjectDetail>
                     </S.Project>
                   </Link>

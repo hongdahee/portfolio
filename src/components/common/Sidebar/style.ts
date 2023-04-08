@@ -35,6 +35,11 @@ export const Menu = styled.li`
   &:hover {
     color: white;
   }
+`;
+
+export const MenuContainer = styled.div`
+  display: flex;
+  align-items: center;
   &.active {
     border-radius: 10px;
     color: white;

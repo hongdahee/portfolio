@@ -1,4 +1,4 @@
-import ProjectMain from "@/components/\bProject";
+import ProjectMain from "@/components/Project";
 import Container from "@/components/common/Container";
 import { Client } from "@notionhq/client";
 

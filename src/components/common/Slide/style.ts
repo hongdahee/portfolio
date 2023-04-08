@@ -84,11 +84,19 @@ export const ProjectDetail = styled.div`
 `;
 
 export const ProjectTag = styled.span`
-  height: 20px;
+  height: 1vw;
   border-radius: 3px;
-  font-size: 1vw;
+  font-size: 0.9em;
   background-color: rgb(50, 48, 44);
   color: rgb(227, 226, 224);
   margin: 0px 6px 6px 0px;
   padding: 5px 6px;
+  @media screen and (max-width: 79em) {
+    font-size: 0.6em;
+  }
+  @media screen and (max-width: 50em) {
+    display: none;
+  }
 `;
+
+export const TagContainer = styled.span``;
