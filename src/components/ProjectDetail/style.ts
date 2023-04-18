@@ -4,6 +4,11 @@ export const MainContainer = styled.section`
   margin-top: 99px;
   display: flex;
   margin-bottom: 40px;
+
+  @media screen and (max-width: 50em) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h1`
@@ -38,6 +43,7 @@ export const InfoText = styled.h3`
   font-weight: 400;
   margin-top: 20px;
   line-height: 1.5em;
+  width: 36vw;
 `;
 
 export const LinkContainer = styled.section`

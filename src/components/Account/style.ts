@@ -20,9 +20,9 @@ export const Profile = styled.div`
   border-radius: 50%;
   border: 0.46875vw solid rgb(42, 43, 44);
   overflow: hidden;
-  Image {
-    object-fit: cover;
-  }
+  background-image: url(${(props) => props.color});
+  background-position: center;
+  background-size: cover;
 `;
 
 export const UserName = styled.span`
