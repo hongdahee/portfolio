@@ -1,13 +1,21 @@
 import React from "react";
 import * as S from "./style";
 
-const Screenshot = () => {
+const Screenshot = ({ data }: any) => {
   return (
     <S.TabContainer>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((el) => (
+      {data[0].properties.screenshot.files.map((el: any, idx: number) => (
         <S.ScreenshotContainer>
-          <S.ImgContainer />
-          <S.ImgName>{el}</S.ImgName>
+          <S.ImgContainer
+            color={el.file?.url || el?.external.url}
+            whileHover={{
+              scale: 1.2,
+              transitionDuration: "0.25s",
+            }}
+          />
+          <S.ImgName>
+            {data[0].properties.screenshotInfo.multi_select[idx]?.name}
+          </S.ImgName>
         </S.ScreenshotContainer>
       ))}
     </S.TabContainer>

@@ -3,14 +3,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import * as S from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faClapperboard,
-  faDesktop,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
 
 const Sidebar = () => {
   const router = useRouter().pathname;
+
   return (
     <S.Sidebar>
       <Link href="/main/project">

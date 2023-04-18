@@ -15,8 +15,11 @@ export const TabContainer = styled.div`
 
 export const Title = styled.h2`
   font-size: 2em;
+  margin-bottom: 2em;
 `;
 
 export const Content = styled.h3`
   font-size: 1.2em;
+  font-weight: 300;
+  margin-bottom: 2em;
 `;

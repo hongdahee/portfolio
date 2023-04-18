@@ -1,11 +1,17 @@
 import ProjectMain from "@/components/Project";
 import Container from "@/components/common/Container";
 import { Client } from "@notionhq/client";
+import { useState } from "react";
 
 const Project = ({ results }: any) => {
+  const [tab, setTab] = useState("전체");
+  const onClickTab = (selectedTab: string) => {
+    setTab(selectedTab);
+  };
+
   return (
     <Container>
-      <ProjectMain data={results} />
+      <ProjectMain data={results} onClickTab={onClickTab} tab={tab} />
     </Container>
   );
 };

@@ -13,11 +13,11 @@ export const Title = styled.h1`
 `;
 
 export const Img = styled.div`
-  background-color: blue;
+  background-color: whitesmoke;
   background-image: url(${(props) => props.color});
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   min-width: 190px;
   height: 270px;
   border-radius: 4px;
@@ -37,6 +37,7 @@ export const InfoText = styled.h3`
   font-size: 15px;
   font-weight: 400;
   margin-top: 20px;
+  line-height: 1.5em;
 `;
 
 export const LinkContainer = styled.section`

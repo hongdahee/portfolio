@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const TabContainer = styled.div`
@@ -18,11 +19,15 @@ export const TabContainer = styled.div`
   }
 `;
 
-export const ImgContainer = styled.div`
+export const ImgContainer = styled(motion.div)`
   width: 100%;
-  height: 15vw;
-  background-color: aliceblue;
+  height: 17vw;
+  background-color: white;
   border-radius: 4px;
+  background-image: url(${(props) => props.color});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   @media screen and (max-width: 79em) {
     height: 18vw;
   }
@@ -40,7 +45,7 @@ export const ScreenshotContainer = styled.div`
 
 export const ImgName = styled.h2`
   margin-top: 20px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 400;
   @media screen and (max-width: 47em) {
     margin-top: 40px;

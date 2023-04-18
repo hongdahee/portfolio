@@ -1,10 +1,11 @@
 import * as S from "./style";
 
-const DetailInfo = () => {
+const DetailInfo = ({ data }: any) => {
   return (
     <S.TabContainer>
-      <S.Title>제목입니다</S.Title>
-      <S.Content>내용입니다</S.Content>
+      {data[0].properties.info.multi_select.map((info: { name: string }) => (
+        <S.Content>{`✅ ${info.name}`}</S.Content>
+      ))}
     </S.TabContainer>
   );
 };

@@ -1,14 +1,37 @@
 import ProjectDetail from "@/components/ProjectDetail";
 import Container from "@/components/common/Container";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { Client } from "@notionhq/client";
+import React from "react";
 
-const Title = () => {
+const Title = ({ results }: any) => {
   return (
     <Container>
-      <ProjectDetail />
+      <ProjectDetail data={results} />
     </Container>
   );
 };
+
+const notion = new Client({
+  auth: process.env.AUTH_KEY,
+});
+
+export async function getServerSideProps(context: {
+  params: { title: string };
+}) {
+  const { results } = await notion.databases.query({
+    database_id: process.env.DB_PROJECT_ID as string,
+    filter: {
+      property: "name",
+      rich_text: {
+        contains: context.params.title,
+      },
+    },
+  });
+  return {
+    props: {
+      results,
+    },
+  };
+}
 
 export default Title;
