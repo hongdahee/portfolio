@@ -36,7 +36,7 @@ const ProjectDetail = ({ data }: any) => {
         <S.InfoContainer>
           <S.Title>{title}</S.Title>
           {stackList.map((stack: string) => (
-            <ProjectTag>{stack}</ProjectTag>
+            <ProjectTag key={stack}>{stack}</ProjectTag>
           ))}
           <S.InfoText>
             {data[0].properties.intro.rich_text[0].plain_text}
@@ -49,7 +49,10 @@ const ProjectDetail = ({ data }: any) => {
             {data[0].properties.link.multi_select[idx].name !== "null" &&
               data[0].properties.link.multi_select[idx].name !==
                 "unavailable" && (
-                <Link href={data[0].properties.link.multi_select[idx].name}>
+                <Link
+                  key={data[0].properties.link.multi_select[idx].name}
+                  href={data[0].properties.link.multi_select[idx].name}
+                >
                   <S.LinkFlex>
                     {link.icon ? (
                       <FontAwesomeIcon
@@ -76,6 +79,7 @@ const ProjectDetail = ({ data }: any) => {
         <S.TabContainer>
           {TAB_LIST.map(({ name }: { name: string }) => (
             <S.Tab
+              key={name}
               onClick={() => activeTab(name)}
               className={name === tabState ? "active" : ""}
             >

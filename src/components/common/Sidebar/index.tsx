@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Sidebar = () => {
   const router = useRouter().pathname;
-
   return (
     <S.Sidebar>
       <Link href="/main/project">
@@ -16,7 +15,15 @@ const Sidebar = () => {
         <S.MenuList>
           {MENU_NAME_LIST.map((menu) => (
             <Link href={menu.path} key={menu.name}>
-              <S.MenuContainer className={router === menu.path ? "active" : ""}>
+              <S.MenuContainer
+                className={
+                  router === menu.path ||
+                  (menu.name === "프로젝트" &&
+                    router === "/main/project/[title]")
+                    ? "active"
+                    : ""
+                }
+              >
                 <FontAwesomeIcon
                   icon={menu.icon}
                   style={{

@@ -5,7 +5,7 @@ const Screenshot = ({ data }: any) => {
   return (
     <S.TabContainer>
       {data[0].properties.screenshot.files.map((el: any, idx: number) => (
-        <S.ScreenshotContainer>
+        <S.ScreenshotContainer key={idx}>
           <S.ImgContainer
             color={el.file?.url || el?.external.url}
             whileHover={{

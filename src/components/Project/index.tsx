@@ -1,24 +1,40 @@
 import Slide from "../common/Slide";
 import * as S from "./style";
 
+const SlideList = [
+  {
+    title: "전체 프로젝트 모아보기",
+  },
+  {
+    title: "웹 프로젝트",
+    filter: "web",
+  },
+  {
+    title: "앱 프로젝트",
+    filter: "app",
+  },
+];
+
 const ProjectMain = ({ data }: any) => {
   return (
     <>
       <S.HomeTitle>홈</S.HomeTitle>
       <S.Line />
-      <Slide data={data} SlideTitle="전체 프로젝트 모아보기" />
-      <Slide
-        data={data.filter(
-          (el: any) => el.properties.category.rich_text[0].plain_text === "web"
-        )}
-        SlideTitle="웹 프로젝트"
-      />
-      <Slide
-        data={data.filter(
-          (el: any) => el.properties.category.rich_text[0].plain_text === "app"
-        )}
-        SlideTitle="앱 프로젝트"
-      />
+      {SlideList.map((slide) => (
+        <Slide
+          key={slide.title}
+          data={
+            slide.filter
+              ? data.filter(
+                  (el: any) =>
+                    el.properties.category.rich_text[0].plain_text ===
+                    slide.filter
+                )
+              : data
+          }
+          SlideTitle={slide.title}
+        />
+      ))}
     </>
   );
 };
