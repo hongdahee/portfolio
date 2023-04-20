@@ -36,7 +36,7 @@ const ProjectDetail = ({ data }: any) => {
         <S.InfoContainer>
           <S.Title>{title}</S.Title>
           <TagContainer>
-            {stackList.map((stack: string) => (
+            {stackList.slice(0, 3).map((stack: string) => (
               <S.ProjectTag key={stack}>{stack}</S.ProjectTag>
             ))}
           </TagContainer>
