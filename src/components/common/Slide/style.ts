@@ -91,12 +91,9 @@ export const ProjectTag = styled.span`
   color: rgb(227, 226, 224);
   margin: 0px 6px 6px 0px;
   padding: 5px 6px;
-  @media screen and (max-width: 79em) {
-    font-size: 0.6em;
-  }
-  @media screen and (max-width: 50em) {
+  @media screen and (max-width: 47em) {
     display: none;
   }
 `;
 
-export const TagContainer = styled.span``;
+export const TagContainer = styled.div``;

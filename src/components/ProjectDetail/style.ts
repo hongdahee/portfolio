@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.section`
-  margin-top: 99px;
+  margin-top: 80px;
   display: flex;
   margin-bottom: 40px;
-
+  gap: 60px;
   @media screen and (max-width: 50em) {
     flex-direction: column;
     align-items: center;
@@ -26,7 +26,6 @@ export const Img = styled.div`
   min-width: 190px;
   height: 270px;
   border-radius: 4px;
-  margin: 0 40px 0 0;
   @media screen and (max-width: 79em) {
     min-width: 160px;
     height: 240px;
@@ -34,7 +33,12 @@ export const Img = styled.div`
 `;
 
 export const InfoContainer = styled.div`
-  padding-top: 80px;
+  @media screen and (max-width: 47em) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 `;
 
 export const InfoText = styled.h3`
@@ -44,6 +48,9 @@ export const InfoText = styled.h3`
   margin-top: 20px;
   line-height: 1.5em;
   width: 36vw;
+  @media screen and (max-width: 47em) {
+    width: 80%;
+  }
 `;
 
 export const LinkContainer = styled.section`
@@ -81,4 +88,14 @@ export const Tab = styled.div`
     color: rgb(255, 255, 255);
     border-bottom: 2.5px solid white;
   }
+`;
+
+export const ProjectTag = styled.span`
+  height: 1vw;
+  border-radius: 3px;
+  font-size: 0.9em;
+  background-color: rgb(50, 48, 44);
+  color: rgb(227, 226, 224);
+  margin: 0px 6px 6px 0px;
+  padding: 5px 6px;
 `;

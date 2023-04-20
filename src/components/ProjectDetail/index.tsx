@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import { useRouter } from "next/router";
-import { ProjectTag } from "../common/Slide/style";
+import { ProjectTag, TagContainer } from "../common/Slide/style";
 import { LINK, TAB_LIST } from "@/constants/projectDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -35,9 +35,11 @@ const ProjectDetail = ({ data }: any) => {
         <S.Img color={img} />
         <S.InfoContainer>
           <S.Title>{title}</S.Title>
-          {stackList.map((stack: string) => (
-            <ProjectTag key={stack}>{stack}</ProjectTag>
-          ))}
+          <TagContainer>
+            {stackList.map((stack: string) => (
+              <S.ProjectTag key={stack}>{stack}</S.ProjectTag>
+            ))}
+          </TagContainer>
           <S.InfoText>
             {data[0].properties.intro.rich_text[0].plain_text}
           </S.InfoText>

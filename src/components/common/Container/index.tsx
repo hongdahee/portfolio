@@ -1,13 +1,15 @@
 import { IContainerProps } from "@/types/container";
 import Sidebar from "../Sidebar";
 import * as S from "./style";
+import Header from "../Header";
 
 const Container = ({ children }: IContainerProps) => {
   return (
-    <S.Container>
+    <>
+      <Header />
       <Sidebar />
-      {children}
-    </S.Container>
+      <S.Container>{children}</S.Container>
+    </>
   );
 };
 
