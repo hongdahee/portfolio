@@ -6,7 +6,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 const IntroSkeleton = () => {
   return (
     <SkeletonWrapper>
-      <Skeleton className="skeleton_intro" />
+      <Skeleton circle className="skeleton_intro" />
     </SkeletonWrapper>
   );
 };
