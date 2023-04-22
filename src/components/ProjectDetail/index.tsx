@@ -70,7 +70,7 @@ const ProjectDetail = ({ data }: any) => {
                     {link.icon ? (
                       <FontAwesomeIcon
                         icon={link.icon}
-                        style={{ minWidth: 5, marginRight: 8 }}
+                        style={{ width: 20, height: 20, marginRight: 8 }}
                       />
                     ) : (
                       <Image
