@@ -16,7 +16,8 @@ export const Text = styled.h1`
   }
 `;
 
-export const Profile = styled.div`
+export const ImgContainer = styled.div`
+  position: relative;
   background-color: white;
   width: 10em;
   height: 10em;

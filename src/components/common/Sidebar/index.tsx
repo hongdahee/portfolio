@@ -30,7 +30,8 @@ const Sidebar = () => {
                     marginLeft: 10,
                     fontSize: 19,
                     color: "white",
-                    minWidth: 25,
+                    maxWidth: 25,
+                    maxHeight: 25,
                   }}
                 />
                 <S.Menu>{menu.name}</S.Menu>

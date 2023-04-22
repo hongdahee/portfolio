@@ -1,6 +1,5 @@
 import React from "react";
 import * as S from "./style";
-import { Menu, MenuContainer } from "../Sidebar/style";
 import { MENU_NAME_LIST } from "@/constants/sidebar";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,7 +29,8 @@ const Header = () => {
               style={{
                 fontSize: 19,
                 color: "white",
-                minWidth: 25,
+                maxWidth: 25,
+                maxHeight: 25,
               }}
             />
             <S.Menu>{menu.name}</S.Menu>

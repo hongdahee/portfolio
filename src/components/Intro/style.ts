@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
-export const Img = styled.div`
-  background-color: whitesmoke;
-  background-image: url(${(props) => props.color});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+export const ImgContainer = styled.div`
+  position: relative;
+  overflow: hidden;
   min-width: 190px;
   height: 270px;
   border-radius: 4px;

@@ -2,6 +2,9 @@ import * as S from "./style";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import SlideSkeleton from "../SlideSkeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Slide = ({ SlideTitle, data }: any) => {
   const [index, setIndex] = useState(0);
@@ -9,6 +12,7 @@ const Slide = ({ SlideTitle, data }: any) => {
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 3000
   );
+  const [isLoading, setIsLoading] = useState(true);
   const offset = 2;
 
   const adjustIndex = (state: string) => {
@@ -59,8 +63,19 @@ const Slide = ({ SlideTitle, data }: any) => {
                       },
                     }}
                     as={`/main/project/${el.properties.name.title[0]?.plain_text}`}
+                    style={{ height: "100%" }}
                   >
-                    <S.Project color={el.properties.img.files[0].file.url}>
+                    <S.Project>
+                      {isLoading && <SlideSkeleton />}
+                      <Image
+                        className="img"
+                        src={el.properties.img.files[0].file.url}
+                        alt="Project thumbnail"
+                        fill
+                        priority
+                        style={{ objectFit: "cover" }}
+                        onLoadingComplete={() => setIsLoading(false)}
+                      />
                       <S.ProjectDetail>
                         <S.ProjectTitle>
                           {el.properties.name.title[0]?.plain_text}

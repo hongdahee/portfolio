@@ -3,7 +3,6 @@ import Container from "@/components/common/Container";
 import { Client } from "@notionhq/client";
 
 const Intro = ({ results }: any) => {
-  console.log(results);
   return (
     <Container>
       <IntroMain data={results} />

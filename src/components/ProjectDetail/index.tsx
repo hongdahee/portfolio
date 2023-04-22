@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import { useRouter } from "next/router";
-import { ProjectTag, TagContainer } from "../common/Slide/style";
+import { TagContainer } from "../common/Slide/style";
 import { LINK, TAB_LIST } from "@/constants/projectDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import Screenshot from "../common/Screenshot";
 import DetailInfo from "../common/DetailInfo";
+import DetailSkeleton from "../common/DetailSkeleton";
 
 const ProjectDetail = ({ data }: any) => {
   const { query } = useRouter();
@@ -15,7 +16,7 @@ const ProjectDetail = ({ data }: any) => {
   const img = query.img || data[0].properties.img.files[0].file.url;
   const [stackList, setStackList] = useState([]);
   const [tabState, setTabState] = useState("스크린샷");
-  console.log(data);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (query.stack) {
@@ -32,7 +33,17 @@ const ProjectDetail = ({ data }: any) => {
   return (
     <>
       <S.MainContainer>
-        <S.Img color={img} />
+        <S.ImgWrapper>
+          <Image
+            src={img}
+            alt="project thumbnail image"
+            fill
+            className="img"
+            priority
+            onLoadingComplete={() => setIsLoading(false)}
+          />
+          {isLoading && <DetailSkeleton />}
+        </S.ImgWrapper>
         <S.InfoContainer>
           <S.Title>{title}</S.Title>
           <TagContainer>

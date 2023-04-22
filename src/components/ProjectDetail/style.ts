@@ -11,25 +11,30 @@ export const MainContainer = styled.section`
   }
 `;
 
+export const ImgWrapper = styled.div`
+  position: relative;
+  width: 190px;
+  height: 270px;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: whitesmoke;
+  @media screen and (max-width: 79em) {
+    width: 160px;
+    height: 240px;
+  }
+  .img {
+    object-fit: contain;
+    @media screen and (max-width: 79em) {
+      width: 160px;
+      height: 240px;
+    }
+  }
+`;
+
 export const Title = styled.h1`
   font-size: 64px;
   font-weight: 900;
   margin-bottom: 20px;
-`;
-
-export const Img = styled.div`
-  background-color: whitesmoke;
-  background-image: url(${(props) => props.color});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  min-width: 190px;
-  height: 270px;
-  border-radius: 4px;
-  @media screen and (max-width: 79em) {
-    min-width: 160px;
-    height: 240px;
-  }
 `;
 
 export const InfoContainer = styled.div`

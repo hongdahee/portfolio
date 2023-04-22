@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
 
 export const Title = styled.h1`
@@ -24,21 +24,30 @@ export const Row = styled(motion.div)`
   position: absolute;
 `;
 
+const load = keyframes`
+ to {
+    background-position: 315px 0, 0 0, 0 190px, 50px 195px;
+  }
+`;
+
 export const Project = styled(motion.div)`
   width: 100%;
   height: 19.5vw;
   border-radius: 4px;
-  background-image: url(${(props) => props.color});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  overflow: hidden;
   position: relative;
+  background: linear-gradient(
+    120deg,
+    #e5e5e5 30%,
+    #f0f0f0 38%,
+    #f0f0f0 40%,
+    #e5e5e5 48%
+  );
+  animation: ${load} 1s infinite;
   &:hover {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(${(props) => props.color});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    .img {
+      filter: brightness(0.5);
+    }
     div {
       display: block;
     }
