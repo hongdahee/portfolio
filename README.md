@@ -1,38 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 프론트엔드 개발자 홍다희 포트폴리오입니다.
 
-## Getting Started
 
-First, run the development server:
+<img width="1425" alt="스크린샷 2023-04-19 오후 10 07 23" src="https://user-images.githubusercontent.com/107875003/233778435-01131227-863c-4d90-b007-1cdb943ed1e6.png">
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+* 배포 링크: https://hongdahee-portfolio.vercel.app/ 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 사이트 소개
+제가 평소에 좋아하는 ott 사이트인 "왓챠"를 컨셉으로 포트폴리오 사이트를 만들면 재밌을 거 같다고 생각해서 왓챠 컨셉의 포트폴리오를 만들게 됐습니다.
+<br> 슬라이드에는 드라마, 영화 대신에 지금까지 했던 프로젝트를 넣어서 소개했습니다.    
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 기술 스택
+* Next.js
+* Typescript
+* styled-components
+* Framer Motion
+* Notion API
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 개발 기간
+2023.3 ~ 2023.4
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 주요 구현 사항
+* 빠른 초기 렌더링 속도를 위해서 SSR 방식으로 데이터 패칭을 했습니다.
+* 모바일을 고려해서 반응형 ui로 개발했습니다.
+* Framer Motion을 이용하여 슬라이드를 구현했습니다.
+* background-image로 이미지를 보여줄 경우 이미지 로딩 속도가 너무 느렸습니다. <br> 그래서 이를 개선하기 위해서 Next.js image 컴포넌트를 사용하여 로딩 속도를 단축시키고 로딩되는 동안 스켈레톤 ui가 나오게 해서 ux를 향상시켰습니다.
