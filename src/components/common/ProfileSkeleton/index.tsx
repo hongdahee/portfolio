@@ -6,7 +6,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 const ProfileSkeleton = () => {
   return (
     <SkeletonWrapper>
-      <Skeleton className="profile-skeleton" />
+      <Skeleton circle className="profile-skeleton" />
     </SkeletonWrapper>
   );
 };

@@ -11,5 +11,6 @@ export const SkeletonWrapper = styled.div`
   .profile-skeleton {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
   }
 `;
