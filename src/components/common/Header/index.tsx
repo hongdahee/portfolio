@@ -29,8 +29,8 @@ const Header = () => {
               style={{
                 fontSize: 19,
                 color: "white",
-                maxWidth: 25,
-                maxHeight: 25,
+                width: 25,
+                height: 25,
               }}
             />
             <S.Menu>{menu.name}</S.Menu>
