@@ -1,9 +1,10 @@
 import ProjectDetail from "@/components/ProjectDetail";
 import Container from "@/components/common/Container";
+import { IDataProps } from "@/types/data";
 import { Client } from "@notionhq/client";
 import React from "react";
 
-const Title = ({ results }: any) => {
+const Title = ({ results }: { results: IDataProps[] }) => {
   return (
     <Container>
       <ProjectDetail data={results} />

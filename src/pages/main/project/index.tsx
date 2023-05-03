@@ -1,26 +1,12 @@
 import ProjectMain from "@/components/Project";
 import Container from "@/components/common/Container";
+import { IDataProps } from "@/types/data";
 import { Client } from "@notionhq/client";
-import { useEffect, useState } from "react";
 
-const Project = ({ results }: any) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [tab, setTab] = useState("전체");
-  const onClickTab = (selectedTab: string) => {
-    setTab(selectedTab);
-  };
-  useEffect(() => {
-    if (results) setIsLoading(false);
-  }, []);
-
+const Project = ({ results }: { results: IDataProps[] }) => {
   return (
     <Container>
-      <ProjectMain
-        loading={isLoading}
-        data={results}
-        onClickTab={onClickTab}
-        tab={tab}
-      />
+      <ProjectMain data={results} />
     </Container>
   );
 };

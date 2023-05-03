@@ -1,8 +1,9 @@
 import StackMain from "@/components/Stack";
 import Container from "@/components/common/Container";
+import { IDataProps } from "@/types/data";
 import { Client } from "@notionhq/client";
 
-const Stack = ({ results }: any) => {
+const Stack = ({ results }: { results: IDataProps[] }) => {
   return (
     <Container>
       <StackMain data={results} />

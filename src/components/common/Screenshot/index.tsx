@@ -1,13 +1,14 @@
 import React from "react";
 import * as S from "./style";
+import { IDataProps, IScreenshot } from "@/types/data";
 
-const Screenshot = ({ data }: any) => {
+const Screenshot = ({ data }: { data: IDataProps[] }) => {
   return (
     <S.TabContainer>
-      {data[0].properties.screenshot.files.map((el: any, idx: number) => (
+      {data[0].properties.screenshot.files.map((el, idx) => (
         <S.ScreenshotContainer key={idx}>
           <S.ImgContainer
-            color={el.file?.url || el?.external.url}
+            color={el.file?.url || el.external?.url}
             whileHover={{
               scale: 1.2,
               transitionDuration: "0.25s",

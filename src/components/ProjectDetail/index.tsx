@@ -9,8 +9,9 @@ import Link from "next/link";
 import Screenshot from "../common/Screenshot";
 import DetailInfo from "../common/DetailInfo";
 import DetailSkeleton from "../common/DetailSkeleton";
+import { IDataProps, IStack, ITabList } from "@/types/data";
 
-const ProjectDetail = ({ data }: any) => {
+const ProjectDetail = ({ data }: { data: IDataProps[] }) => {
   const { query } = useRouter();
   const title = query.title;
   const img = query.img || data[0].properties.img.files[0].file.url;
@@ -21,7 +22,7 @@ const ProjectDetail = ({ data }: any) => {
   useEffect(() => {
     if (query.stack) {
       setStackList(
-        JSON.parse(query.stack as string).map((stack: any) => stack.name)
+        JSON.parse(query.stack as string).map((stack: IStack) => stack.name)
       );
     }
   }, []);
@@ -35,7 +36,7 @@ const ProjectDetail = ({ data }: any) => {
       <S.MainContainer>
         <S.ImgWrapper>
           <Image
-            src={img}
+            src={img as string}
             alt="project thumbnail image"
             fill
             className="img"
@@ -47,7 +48,7 @@ const ProjectDetail = ({ data }: any) => {
         <S.InfoContainer>
           <S.Title>{title}</S.Title>
           <TagContainer>
-            {stackList.slice(0, 3).map((stack: string) => (
+            {stackList.slice(0, 3).map((stack) => (
               <S.ProjectTag key={stack}>{stack}</S.ProjectTag>
             ))}
           </TagContainer>
@@ -57,7 +58,7 @@ const ProjectDetail = ({ data }: any) => {
         </S.InfoContainer>
       </S.MainContainer>
       <S.LinkContainer>
-        {LINK.map((link: any, idx: number) => (
+        {LINK.map((link, idx) => (
           <>
             {data[0].properties.link.multi_select[idx].name !== "null" &&
               data[0].properties.link.multi_select[idx].name !==
@@ -90,7 +91,7 @@ const ProjectDetail = ({ data }: any) => {
       </S.LinkContainer>
       <S.ContentContainer>
         <S.TabContainer>
-          {TAB_LIST.map(({ name }: { name: string }) => (
+          {TAB_LIST.map(({ name }) => (
             <S.Tab
               key={name}
               onClick={() => activeTab(name)}
@@ -101,7 +102,7 @@ const ProjectDetail = ({ data }: any) => {
           ))}
         </S.TabContainer>
         {TAB_LIST.map(
-          (tab: any) =>
+          (tab) =>
             tabState == tab.name &&
             (tabState === "스크린샷" ? (
               <Screenshot data={data} />

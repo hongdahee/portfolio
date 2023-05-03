@@ -1,8 +1,9 @@
 import Account from "@/components/Account";
 import FlexContainer from "@/components/common/FlexContainer";
+import { IDataProps } from "@/types/data";
 import { Client } from "@notionhq/client";
 
-export default function Home({ results }: any) {
+export default function Home({ results }: { results: IDataProps[] }) {
   return (
     <FlexContainer>
       <Account data={results} />

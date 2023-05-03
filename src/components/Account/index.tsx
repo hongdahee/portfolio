@@ -3,8 +3,9 @@ import * as S from "./style";
 import ProfileSkeleton from "../common/ProfileSkeleton";
 import { useState } from "react";
 import Image from "next/image";
+import { IDataProps } from "@/types/data";
 
-const Account = ({ data }: any) => {
+const Account = ({ data }: { data: IDataProps[] }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (

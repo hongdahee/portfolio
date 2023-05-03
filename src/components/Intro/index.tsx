@@ -3,8 +3,9 @@ import * as S from "./style";
 import Image from "next/image";
 import Link from "next/link";
 import IntroSkeleton from "../common/IntroSkeleton";
+import { IDataProps } from "@/types/data";
 
-const IntroMain = ({ data }: any) => {
+const IntroMain = ({ data }: { data: IDataProps[] }) => {
   const [isLoading, setIsLoading] = useState(true);
   return (
     <S.Container>

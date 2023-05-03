@@ -1,8 +1,9 @@
 import IntroMain from "@/components/Intro";
 import Container from "@/components/common/Container";
+import { IDataProps } from "@/types/data";
 import { Client } from "@notionhq/client";
 
-const Intro = ({ results }: any) => {
+const Intro = ({ results }: { results: IDataProps[] }) => {
   return (
     <Container>
       <IntroMain data={results} />

@@ -1,3 +1,4 @@
+import { IDataProps } from "@/types/data";
 import Slide from "../common/Slide";
 import * as S from "./style";
 
@@ -15,7 +16,7 @@ const SlideList = [
   },
 ];
 
-const ProjectMain = ({ data }: any) => {
+const ProjectMain = ({ data }: { data: IDataProps[] }) => {
   return (
     <>
       <S.HomeTitle>홈</S.HomeTitle>
@@ -26,7 +27,7 @@ const ProjectMain = ({ data }: any) => {
           data={
             slide.filter
               ? data.filter(
-                  (el: any) =>
+                  (el: IDataProps) =>
                     el.properties.category.rich_text[0].plain_text ===
                     slide.filter
                 )

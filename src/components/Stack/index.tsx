@@ -1,11 +1,12 @@
 import React from "react";
 import * as S from "./style";
+import { IDataProps } from "@/types/data";
 
-const StackMain = ({ data }: any) => {
+const StackMain = ({ data }: { data: IDataProps[] }) => {
   return (
     <>
       <S.Grid>
-        {data.map((stack: any) => (
+        {data.map((stack) => (
           <S.Container
             key={stack.properties.skill.title[0].plain_text}
             href={`#${stack.properties.skill.title[0].plain_text}`}
@@ -21,7 +22,7 @@ const StackMain = ({ data }: any) => {
         ))}
       </S.Grid>
       <S.Flex>
-        {data.map((stack: any) => (
+        {data.map((stack) => (
           <S.DescContainer key={stack.properties.skill.title[0].plain_text}>
             <S.LargeName id={stack.properties.skill.title[0].plain_text}>
               {stack.properties.skill.title[0].plain_text}
